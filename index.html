@@ -70,7 +70,7 @@ h1 .g{background:linear-gradient(90deg,var(--koda),var(--tauron) 50%,var(--phoen
 .btn::after{content:"";position:absolute;top:0;bottom:0;width:40%;left:-60%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);animation:swipe 4.5s ease-in-out infinite}
 @keyframes swipe{0%,60%{left:-60%}100%{left:130%}}
 .btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(224,79,255,.3)}
-.btn:focus-visible,.copy:focus-visible,.scan:focus-visible,.link:focus-visible,.char:focus-visible{outline:3px solid var(--warn);outline-offset:2px}
+.btn:focus-visible,.copy:focus-visible,.scan:focus-visible,.link:focus-visible,.guide a:focus-visible,.char:focus-visible{outline:3px solid var(--warn);outline-offset:2px}
 .sub{font-size:13px;color:var(--dim);text-align:center;margin:8px 0 0}
 
 section{margin-top:40px}
@@ -124,6 +124,10 @@ h2{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)
 .scam li{margin:6px 0}
 .credits p{margin:0;color:var(--dim);font-size:15px}
 .credits b{color:var(--txt)}
+.steps{margin:0;padding-left:20px}
+.steps li{margin:8px 0}
+.steps .ref{color:var(--dim)}
+.disclosure{margin:14px 0 0}
 footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--dim);font-size:13px}
 .risk{color:var(--warn);font-weight:700;margin:0 0 8px}
 .motto{font-style:italic;margin:14px 0 0}
@@ -143,8 +147,11 @@ footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:v
   .char .av{height:210px}
   .char .av img{max-height:210px}
   .links{grid-template-columns:1fr 1fr}
-  .grid2{display:grid;grid-template-columns:1.25fr 1fr;gap:28px;align-items:start}
+  .grid2{display:grid;grid-template-columns:1.25fr 1fr;grid-template-areas:"ca side" "guide guide";gap:28px;align-items:start}
   .grid2 section:first-child{margin-top:40px}
+  .grid2 > section:first-child{grid-area:ca}
+  .grid2 > .guide{grid-area:guide;margin-top:0}
+  .grid2 > div{grid-area:side}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
@@ -240,6 +247,19 @@ footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:v
     </div>
   </div>
   <p class="note">All four are Solana tokens with mint and freeze authority revoked. Always compare the <b>full</b> address, not just the first and last few characters. Look-alike tokens use the same names and logos.</p>
+</section>
+
+<section aria-labelledby="h-start" class="guide reveal">
+  <h2 id="h-start">Getting started with Solana</h2>
+  <div class="card">
+    <ol class="steps">
+      <li>Get a Solana wallet — <a href="https://phantom.app" rel="noopener sponsored" target="_blank">Phantom</a> or <a href="https://solflare.com" rel="noopener sponsored" target="_blank">Solflare</a> — and write down your recovery phrase offline. Never share it.</li>
+      <li>Get SOL. Buy SOL on an exchange such as <a href="https://coinbase.com/join/4GP8BPY?src=android-share" rel="noopener sponsored" target="_blank">Coinbase</a>, then withdraw it to your wallet's Solana address. Send a small test amount first. <span class="ref">Referral link: new Coinbase users who sign up and meet Coinbase's terms can get a bonus, and so do we.</span></li>
+      <li>Swap on <a href="https://jupiter.go.link/etgQr" rel="noopener sponsored" target="_blank">Jupiter</a>, Solana's swap aggregator. <span class="ref">Referral link.</span> Always paste the contract address from this page, never search by name.</li>
+      <li>Keep some SOL for network fees.</li>
+    </ol>
+    <p class="disclosure">Some links above are referral links; we may earn a small commission at no extra cost to you. Nothing here is financial advice. Crypto is risky; only use money you can afford to lose.</p>
+  </div>
 </section>
 
 <div>
